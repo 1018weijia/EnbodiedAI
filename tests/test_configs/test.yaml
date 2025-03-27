@@ -23,6 +23,7 @@ task:
       create_robot: True
       # position: [1.0, 0.5, 1.0]
       position: [0.0, 0.0, 1.0]
+      orientation: [1, 0, 0, 0]
       controllers:
         - type: "PositionController"
       # controller:

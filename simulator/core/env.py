@@ -109,7 +109,7 @@ class BaseEnv:
 
         # Iterate over all robots and apply actions
         for robot in self.robots[scene_id]:
-           robot.apply_action(action_dict[robot.name])
+           robot.apply_action(action_dict[robot.name],world=self.sim._world)
 
 
     def _post_step(self, scene_id):

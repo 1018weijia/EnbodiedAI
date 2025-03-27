@@ -65,7 +65,7 @@ class Stretch(BaseRobot):
         pass
     
     
-    def apply_action(self, action_instruct):
+    def apply_action(self, action_instruct,world):
         id = 0
         for controller in self.controllers:
             dim = controller.action_dim
@@ -73,8 +73,10 @@ class Stretch(BaseRobot):
             id+=dim 
         if self.use_position:
             self.Xform.set_world_pose(position = command[0],orientation = command[1])
+            world.step(render=True)
         else:
             self.isaac_robot.apply_action(command)
+            world.step(render=True)
 
     def reset(self):
         pass
